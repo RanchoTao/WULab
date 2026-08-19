@@ -1,0 +1,49 @@
+:root {
+  --cyan: #66e6ff;
+  --blue: #1793c4;
+  --navy: #082a3b;
+  --navy-2: #0d3b50;
+  --paper: #f6f9fa;
+}
+
+.site-header {
+  background: rgba(5, 28, 40, .70);
+  border-bottom-color: rgba(255,255,255,.15);
+}
+
+.hero {
+  background:
+    radial-gradient(circle at 76% 40%, rgba(38, 181, 224, .34), transparent 30%),
+    radial-gradient(circle at 62% 76%, rgba(35, 126, 174, .30), transparent 32%),
+    linear-gradient(135deg, #082536 0%, #0d3a50 52%, #0a3043 100%);
+}
+
+.network-canvas { opacity: .94; }
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(112, 225, 250, .07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(112, 225, 250, .07) 1px, transparent 1px);
+}
+.hero-orbit { border-color: rgba(104, 224, 250, .20); }
+.orbit-a { box-shadow: 0 0 140px rgba(69, 214, 245, .09) inset; }
+
+.lab-mark { color: #79e7ff; }
+.hero-kicker { color: #a0ebfb; }
+.hero-kicker span { background: #72e5fb; }
+.hero h1 em { color: #83e9ff; }
+.hero-en { color: rgba(255,255,255,.66); }
+.hero-lead { color: rgba(255,255,255,.94); }
+.button.primary { background: #73e4ff; color: #082535; }
+.button.primary:hover { background: #a0edff; }
+.button.ghost { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.34); }
+.institution-strip { color: rgba(255,255,255,.60); }
+.institution-strip strong { color: rgba(255,255,255,.90); }
+.scroll-hint { color: rgba(255,255,255,.58); }
+.scroll-hint span { color: #86e9ff; }
+
+.section-dark { background: #0a2d40; }
+.footer { background: #071f2e; }
+
+@media (max-width: 820px) {
+  .site-header { background: rgba(5, 28, 40, .84); }
+}
