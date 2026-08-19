@@ -44,6 +44,16 @@
 .section-dark { background: #0a2d40; }
 .footer { background: #071f2e; }
 
+/* Keep the hero heading as exactly two lines on desktop:
+   复杂系统 / 拓扑统计理论及应用 */
+@media (min-width: 821px) {
+  .hero h1 {
+    max-width: 1020px;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 820px) {
   .site-header { background: rgba(5, 28, 40, .84); }
+  .hero h1 { white-space: normal; }
 }
