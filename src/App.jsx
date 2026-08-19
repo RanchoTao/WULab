@@ -84,10 +84,10 @@ function FlowBackground() {
     let dpr = 1
 
     const blobs = [
-      { x: .18, y: .78, r: .38, speed: .00020, phase: 0.3, color: [34, 236, 221], alpha: .55 },
-      { x: .43, y: .18, r: .36, speed: .00014, phase: 1.8, color: [23, 166, 255], alpha: .48 },
-      { x: .70, y: .32, r: .42, speed: .00012, phase: 3.2, color: [30, 133, 255], alpha: .34 },
-      { x: .88, y: .75, r: .46, speed: .00016, phase: 4.6, color: [20, 73, 190], alpha: .38 },
+      { x: .18, y: .78, r: .38, speed: .00020, phase: 0.3, color: [42, 125, 180], alpha: .28 },
+      { x: .43, y: .18, r: .36, speed: .00014, phase: 1.8, color: [55, 135, 210], alpha: .28 },
+      { x: .70, y: .32, r: .42, speed: .00012, phase: 3.2, color: [33, 102, 180], alpha: .22 },
+      { x: .88, y: .75, r: .46, speed: .00016, phase: 4.6, color: [28, 65, 125], alpha: .25 },
     ]
 
     const resize = () => {
@@ -330,48 +330,32 @@ export default function App() {
             <SectionTitle
               eyebrow="PEOPLE"
               title="学术团队"
-              intro="以数学、统计、计算与生命科学的深度交叉为核心，组织国际化、跨学科研究力量。"
+              intro="以数学、统计、计算与生命科学的深度交叉为核心，建设开放协作的研究团队。"
             />
             <div className="people-grid">
-              {people.map(([name, en, role, focus]) => (
+              {people.map(([name, en, role, field]) => (
                 <article className="person-card" key={name}>
-                  <div className="person-monogram">{name.slice(0, 1)}</div>
-                  <span>{role}</span>
-                  <h3>{name}</h3>
-                  <strong>{en}</strong>
-                  <p>{focus}</p>
+                  <div className="person-photo" />
+                  <div className="person-copy">
+                    <p>{role}</p>
+                    <h3>{name}</h3>
+                    <span>{en}</span>
+                    <small>{field}</small>
+                  </div>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section news-section" id="news">
-          <div className="page-shell">
-            <SectionTitle eyebrow="NEWS & EVENTS" title="科研动态" />
-            <div className="news-list">
-              {heroNews.map((item) => (
-                <a href={item.href} target="_blank" rel="noreferrer" key={item.title}>
-                  <div><span>{item.type}</span><time>{item.date}</time></div>
-                  <h3>{item.title}</h3>
-                  <p>{item.summary}</p>
-                  <b>↗</b>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="about-section" id="about">
-          <div className="page-shell about-inner">
+        <section className="section about-section" id="about">
+          <div className="page-shell about-grid">
             <div>
-              <span>ABOUT THE LABORATORY</span>
-              <h2>复杂系统拓扑统计理论及应用北京市重点实验室</h2>
+              <SectionTitle eyebrow="ABOUT" title="关于实验室" />
             </div>
-            <div>
-              <p>实验室依托北京雁栖湖应用数学研究院建设，与中国人民大学数学学院联合共建，聚焦应用数学中的拓扑统计方向。</p>
-              <p>面向国家重大需求与现代复杂数据分析挑战，推动统计学与拓扑学、统计物理、图论、进化博弈论等分支交叉融合。</p>
-              <a href="https://www.bimsa.cn/" target="_blank" rel="noreferrer">访问 BIMSA ↗</a>
+            <div className="about-copy">
+              <p>复杂系统拓扑统计理论及应用北京市重点实验室聚焦复杂系统中的统计规律、拓扑结构与数据智能问题，推动数学理论、计算方法与交叉应用协同发展。</p>
+              <p>实验室依托北京雁栖湖应用数学研究院（BIMSA），联合中国人民大学数学学院建设，面向开放科学与国际合作持续汇聚优秀研究力量。</p>
             </div>
           </div>
         </section>
@@ -379,21 +363,20 @@ export default function App() {
         <section className="join-section" id="join">
           <div className="page-shell join-inner">
             <span>JOIN US</span>
-            <h2>与我们一起研究<br />复杂世界背后的数学结构。</h2>
-            <div>
-              <p>欢迎对拓扑、统计、复杂系统、AI for Science、数学生物学与计算医学感兴趣的青年研究者与学生关注实验室。</p>
-              <a href="mailto:ronglingwu@bimsa.cn">联系我们 ↗</a>
-            </div>
+            <h2>与我们一起研究复杂世界。</h2>
+            <p>欢迎青年学者、博士后、研究生与优秀本科生加入实验室，开展数学、统计、人工智能与生命科学交叉研究。</p>
           </div>
         </section>
       </main>
 
-      <footer className="footer">
+      <footer>
         <div className="page-shell footer-inner">
-          <div className="footer-brand"><LabMark /><span><strong>复杂系统拓扑统计理论及应用北京市重点实验室</strong><small>Beijing Key Laboratory of Topological Statistics and Applications for Complex Systems</small></span></div>
-          <div><p>北京雁栖湖应用数学研究院 · BIMSA</p><p>北京市怀柔区河防口村 544 号</p><a href="mailto:ronglingwu@bimsa.cn">ronglingwu@bimsa.cn</a></div>
+          <div>
+            <strong>复杂系统拓扑统计理论及应用北京市重点实验室</strong>
+            <span>Beijing Key Laboratory of Topological Statistics and Applications for Complex Systems</span>
+          </div>
+          <p>Beijing · Huairou · BIMSA</p>
         </div>
-        <div className="page-shell copyright">© {new Date().getFullYear()} WULab · Academic website</div>
       </footer>
     </div>
   )
