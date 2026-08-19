@@ -19,12 +19,12 @@
 }
 
 .person-card:nth-child(1) .person-mark {
-  background-image: url('/WULab/people/yau.jpg');
+  background-image: url('/WULab/people/wu.jpg');
   background-position: 50% 34%;
 }
 
 .person-card:nth-child(2) .person-mark {
-  background-image: url('/WULab/people/wu.jpg');
+  background-image: url('/WULab/people/yau.jpg');
   background-position: 50% 30%;
 }
 
