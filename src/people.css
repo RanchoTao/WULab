@@ -1,0 +1,45 @@
+.person-monogram {
+  position: relative;
+  height: 220px;
+  margin: -28px -28px 30px;
+  overflow: hidden;
+  background-color: #1d6eae;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: transparent;
+  font-size: 0;
+  text-indent: -9999px;
+}
+
+.person-monogram::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 38, 76, 0.02), rgba(9, 38, 76, 0.12));
+  pointer-events: none;
+}
+
+.person-card:nth-child(1) .person-monogram {
+  background-image: url('/WULab/people/yau.jpg');
+  background-position: 50% 35%;
+}
+
+.person-card:nth-child(2) .person-monogram {
+  background-image: url('/WULab/people/wu.jpg');
+  background-position: 50% 38%;
+}
+
+.person-card:nth-child(3) .person-monogram {
+  background-image: url('/WULab/people/gong.jpg');
+  background-position: 50% 24%;
+}
+
+.person-card {
+  min-height: 445px;
+}
+
+@media (max-width: 900px) {
+  .person-monogram {
+    height: 260px;
+  }
+}
