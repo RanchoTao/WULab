@@ -121,13 +121,15 @@ function NetworkCanvas() {
       canvas.width = width * dpr
       canvas.height = height * dpr
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-      const count = Math.max(34, Math.floor(width / 28))
+      const count = Math.max(42, Math.floor(width / 24))
       points = Array.from({ length: count }, (_, i) => ({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.18,
-        vy: (Math.random() - 0.5) * 0.18,
-        r: i % 9 === 0 ? 2.4 : 1.35,
+        vx: (Math.random() - 0.5) * 0.16,
+        vy: (Math.random() - 0.5) * 0.16,
+        r: i % 9 === 0 ? 2.55 : 1.2 + Math.random() * 0.45,
+        phase: Math.random() * Math.PI * 2,
+        depth: 0.72 + Math.random() * 0.28,
       }))
     }
 
@@ -136,8 +138,8 @@ function NetworkCanvas() {
       ctx.clearRect(0, 0, width, height)
 
       for (const p of points) {
-        p.x += p.vx
-        p.y += p.vy
+        p.x += p.vx * p.depth
+        p.y += p.vy * p.depth
         if (p.x < 0 || p.x > width) p.vx *= -1
         if (p.y < 0 || p.y > height) p.vy *= -1
       }
@@ -149,9 +151,10 @@ function NetworkCanvas() {
           const dx = a.x - b.x
           const dy = a.y - b.y
           const dist = Math.hypot(dx, dy)
-          if (dist < 145) {
-            ctx.strokeStyle = `rgba(79, 207, 255, ${0.14 * (1 - dist / 145)})`
-            ctx.lineWidth = 0.7
+          if (dist < 158) {
+            const opacity = 0.2 * (1 - dist / 158) * Math.min(a.depth, b.depth)
+            ctx.strokeStyle = `rgba(102, 224, 255, ${opacity})`
+            ctx.lineWidth = 0.72
             ctx.beginPath()
             ctx.moveTo(a.x, a.y)
             ctx.lineTo(b.x, b.y)
@@ -161,11 +164,18 @@ function NetworkCanvas() {
       }
 
       points.forEach((p, i) => {
-        const pulse = i % 9 === 0 ? 0.6 + Math.sin(frame * 0.018 + i) * 0.35 : 0.65
-        ctx.fillStyle = `rgba(${i % 9 === 0 ? '88, 221, 255' : '184, 228, 244'}, ${pulse})`
+        const isCore = i % 9 === 0
+        const pulse = isCore
+          ? 0.72 + Math.sin(frame * 0.018 + p.phase) * 0.24
+          : 0.58 + Math.sin(frame * 0.01 + p.phase) * 0.1
+        ctx.save()
+        ctx.shadowBlur = isCore ? 18 : 7
+        ctx.shadowColor = isCore ? 'rgba(91, 224, 255, .88)' : 'rgba(144, 220, 245, .4)'
+        ctx.fillStyle = `rgba(${isCore ? '109, 231, 255' : '194, 234, 248'}, ${pulse})`
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
         ctx.fill()
+        ctx.restore()
       })
 
       animationId = requestAnimationFrame(draw)
@@ -256,8 +266,11 @@ export default function App() {
         <section className="hero">
           <NetworkCanvas />
           <div className="hero-grid" aria-hidden="true" />
+          <div className="hero-aurora aurora-a" aria-hidden="true" />
+          <div className="hero-aurora aurora-b" aria-hidden="true" />
           <div className="hero-orbit orbit-a" aria-hidden="true" />
           <div className="hero-orbit orbit-b" aria-hidden="true" />
+          <div className="hero-vignette" aria-hidden="true" />
 
           <div className="hero-content page-shell">
             <div className="hero-kicker"><span /> BEIJING KEY LABORATORY</div>
