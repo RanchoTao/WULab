@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './AppEnhanced.jsx'
+import App from './HomePage.jsx'
 import './styles.css'
 import './people.css'
 import './brighten.css'
