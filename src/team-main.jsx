@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './HomePage.jsx'
+import TeamPage from './TeamPage.jsx'
 import './styles.css'
-import './people.css'
 import './brighten.css'
 import './navigation-org.css'
+import './team-page.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('team-root')).render(
   <React.StrictMode>
-    <App />
+    <TeamPage />
   </React.StrictMode>,
 )
