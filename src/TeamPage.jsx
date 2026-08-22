@@ -12,7 +12,7 @@ const teamMembers = [
   {
     name: '崔跃华',
     en: 'YUEHUA CUI',
-    photo: `${base}people/team/cui-yuehua.jpg`,
+    photo: `${base}people/team/cui-yuehua.svg`,
     position: '50% 50%',
   },
   {
