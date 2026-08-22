@@ -12,8 +12,8 @@ const teamMembers = [
   {
     name: '崔跃华',
     en: 'YUEHUA CUI',
-    photo: 'https://directory.natsci.msu.edu/media/Directory/Profiles/Cui_202220221014102646.jpg',
-    position: '50% 28%',
+    photo: `${base}people/team/cui-yuehua.jpg`,
+    position: '50% 50%',
   },
   {
     name: '刘军',
