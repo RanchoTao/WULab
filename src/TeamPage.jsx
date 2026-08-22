@@ -12,7 +12,7 @@ const teamMembers = [
   {
     name: '崔跃华',
     en: 'YUEHUA CUI',
-    photo: `${base}people/team/cui-yuehua.jpg`,
+    photo: 'https://directory.natsci.msu.edu/media/Directory/Profiles/Cui_202220221014102646.jpg',
     position: '50% 28%',
   },
   {
@@ -43,8 +43,10 @@ const teamMembers = [
   {
     name: '杨帆',
     en: 'FAN YANG',
-    photo: `${base}people/team/yang-fan.jpg`,
-    position: '50% 50%',
+    photo: 'https://qzc.tsinghua.edu.cn/__local/8/3F/E3/75CCB8BF92C728EB25C2749DA40_5B623D0C_153555.png',
+    position: '72% 61%',
+    scale: 3.8,
+    origin: '72% 61%',
   },
   {
     name: '饶毅',
@@ -154,8 +156,11 @@ function Portrait({ person, leader = false }) {
         src={person.photo}
         alt={person.name}
         loading={leader ? 'eager' : 'lazy'}
-        referrerPolicy="no-referrer"
-        style={{ objectPosition: person.position || '50% 28%' }}
+        style={{
+          objectPosition: person.position || '50% 28%',
+          transform: person.scale ? `scale(${person.scale})` : undefined,
+          transformOrigin: person.origin || '50% 50%',
+        }}
         onError={(event) => { event.currentTarget.style.display = 'none' }}
       />
     </div>
