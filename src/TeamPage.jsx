@@ -12,7 +12,8 @@ const teamMembers = [
   {
     name: '崔跃华',
     en: 'YUEHUA CUI',
-    photo: 'https://directory.natsci.msu.edu/media/Directory/Profiles/Cui_202220221014102646.jpg',
+    photo: `${base}people/team/cui-yuehua.jpg`,
+    position: '50% 28%',
   },
   {
     name: '刘军',
@@ -25,6 +26,27 @@ const teamMembers = [
     photo: 'https://www.cms.org.cn/upload/editor/image/20171204/04082812269.jpg',
   },
   {
+    name: '吴杰',
+    en: 'JIE WU',
+    photo: 'https://hsc.beijing.gov.cn/hsc/ywdt8/zxdt72/543529537/2025021410352334150.jpg',
+  },
+  {
+    name: '邬荣领',
+    en: 'RONGLING WU',
+    photo: 'https://hsc.beijing.gov.cn/hsc/ywdt8/zxdt72/543529537/2025021410343895510.jpg',
+  },
+  {
+    name: '丘成栋',
+    en: 'CHENGDONG QIU',
+    photo: 'https://hsc.beijing.gov.cn/hsc/ywdt8/zxdt72/543529537/2025021410361088743.jpg',
+  },
+  {
+    name: '杨帆',
+    en: 'FAN YANG',
+    photo: `${base}people/team/yang-fan.jpg`,
+    position: '50% 50%',
+  },
+  {
     name: '饶毅',
     en: 'YI RAO',
     photo: 'https://www.futureforum.org.cn/resource/data/uploads/95/58fcf4fa4c8c0a0afd827e1993b6e0d5.jpg',
@@ -35,29 +57,9 @@ const teamMembers = [
     photo: 'https://yjszs.zjgsu.edu.cn/_upload/article/images/c3/f3/b7bffef34dbbb833047cb272c97f/e506d406-5bb1-460b-8556-8b304939e90c.png',
   },
   {
-    name: '杨帆',
-    en: 'FAN YANG',
-    photo: 'https://www.bimsa.cn/upload/img/01J265WYNMNWW6RXA0H0921HFQ.jpg',
-  },
-  {
-    name: '吴杰',
-    en: 'JIE WU',
-    photo: 'https://hsc.beijing.gov.cn/hsc/ywdt8/zxdt72/543529537/2025021410352334150.jpg',
-  },
-  {
-    name: '丘成栋',
-    en: 'CHENGDONG QIU',
-    photo: 'https://hsc.beijing.gov.cn/hsc/ywdt8/zxdt72/543529537/2025021410361088743.jpg',
-  },
-  {
     name: '龚新奇',
     en: 'XINQI GONG',
     photo: 'https://hsc.beijing.gov.cn/hsc/ywdt8/zxdt72/543529537/2025021410350331219.jpg',
-  },
-  {
-    name: '邬荣领',
-    en: 'RONGLING WU',
-    photo: 'https://hsc.beijing.gov.cn/hsc/ywdt8/zxdt72/543529537/2025021410343895510.jpg',
   },
 ]
 
